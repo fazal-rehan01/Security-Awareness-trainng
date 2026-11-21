@@ -1,0 +1,774 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CyberShield · Digital Safety Awareness Hub</title>
+  <meta name="description" content="A visual, bilingual digital safety hub for new internet users, children, elders and women facing online harassment.">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#102a43">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="common.skip">Skip to main content</a>
+
+  <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.8 20 6v5.4c0 4.8-3.3 8.2-8 9.8-4.7-1.6-8-5-8-9.8V6l8-3.2Z"/><path d="m8.7 11.9 2.2 2.2 4.4-4.7"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 20V4"/><path d="m6 10 6-6 6 6"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.4 2.5 3.6 5.5 3.6 9S14.4 18.5 12 21c-2.4-2.5-3.6-5.5-3.6-9S9.6 5.5 12 3Z"/></symbol>
+    <symbol id="i-exit" viewBox="0 0 24 24"><path d="M14 4h5v16h-5"/><path d="M4 12h11"/><path d="m10 7-5 5 5 5"/></symbol>
+    <symbol id="i-pictures" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m4 17 5-5 4 4 2-2 5 5"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7-4.7-1.8 4.7-1.8L12 3Z"/><path d="m19 15 .8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15Z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10 5h4M11 18.5h2"/></symbol>
+    <symbol id="i-shield-heart" viewBox="0 0 24 24"><path d="M12 2.8 20 6v5.4c0 4.8-3.3 8.2-8 9.8-4.7-1.6-8-5-8-9.8V6l8-3.2Z"/><path d="M12 16.5 8.9 13.4a2.1 2.1 0 0 1 3-3l.1.1.1-.1a2.1 2.1 0 1 1 3 3L12 16.5Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.6 4.6L19.5 6.7"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></symbol>
+    <symbol id="i-volume" viewBox="0 0 24 24"><path d="M5 10v4h3l4 4V6L8 10H5Z"/><path d="M16 9a4.2 4.2 0 0 1 0 6M18.7 6.5a8 8 0 0 1 0 11"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10" width="15" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13.5a4 4 0 0 0 5.7 0l2.8-2.8a4 4 0 0 0-5.7-5.7l-1.6 1.6"/><path d="M14 10.5a4 4 0 0 0-5.7 0l-2.8 2.8a4 4 0 0 0 5.7 5.7l1.6-1.6"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2.8 20h18.4L12 3Z"/><path d="M12 9v5M12 17.5v.5"/></symbol>
+    <symbol id="i-user-question" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 9.2-6.8"/><path d="M17.5 15.5a2 2 0 1 1 2.2 2c-.9.3-1.2.8-1.2 1.7M18.5 21v.2"/></symbol>
+    <symbol id="i-school" viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l7-4 7 4v12"/><path d="M9 21v-6h6v6M9 10h.01M15 10h.01"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l1.5-2h7L17 8h3v11H4V8Z"/><circle cx="12" cy="13.5" r="3.5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-pin-off" viewBox="0 0 24 24"><path d="M4 4l16 16M9.2 4.5A8 8 0 0 1 20 10c0 1.8-1 3.8-2.4 5.7M15 18.2 12 21S4 15 4 10c0-1.1.3-2.2.8-3.2M10.5 7.2a2.5 2.5 0 0 1 3.9 3"/></symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2.5h6V4M9 9h6M9 13h6M9 17h4"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="m11 12 8-8M16 4l4 4M14 6l4 4"/></symbol>
+    <symbol id="i-rotate" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 2 8"/><path d="M4 4v6h6"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5H5V6h5"/></symbol>
+    <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M3 3l18 18M10.6 10.7a2 2 0 0 0 2.7 2.7M9.7 5.2A11 11 0 0 1 12 5c5.5 0 9 6 9 6a17 17 0 0 1-3.1 3.7M6.2 6.3A17 17 0 0 0 3 11s3.5 6 9 6a10 10 0 0 0 3.2-.5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 5a3.5 3.5 0 0 1 0 6.8M18 14.5a6.3 6.3 0 0 1 3.5 5.5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.4 5.4 0 0 0-7.7 0L12 5.7l-1.1-1.1a5.4 5.4 0 0 0-7.7 7.7L12 21l8.8-8.7a5.4 5.4 0 0 0 0-7.7Z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 2.5h8l4 4V21H6V2.5Z"/><path d="M14 2.5V7h4M9 12h6M9 16h6"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M4 4h16v12H9l-5 4V4Z"/><path d="M8 8h8M8 11h5"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8v10H3V11Z"/><path d="M9 21v-7h6v7"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M4 13v7h16v-7"/></symbol>
+  </svg>
+
+  <aside class="top-strip" aria-label="Prototype information" data-i18n-aria-label="topbar.region">
+    <div class="container top-strip-inner">
+      <p class="top-strip-note">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span data-i18n="topbar.note">Student capstone · No accounts · No tracking</span>
+      </p>
+      <a class="top-strip-link" href="#help">
+        <svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg>
+        <span data-i18n="topbar.help">Need help now?</span>
+      </a>
+    </div>
+  </aside>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-row">
+        <a class="brand" href="#start" aria-label="CyberShield home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg class="icon"><use href="#i-shield"></use></svg>
+          </span>
+          <span class="brand-copy">
+            <span class="brand-name">CyberShield</span>
+            <span class="brand-tagline" data-i18n="brand.tagline">Digital Safety Awareness Hub</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Main navigation" data-i18n-aria-label="nav.aria">
+          <a href="#paths" data-i18n="nav.start">Start here</a>
+          <a href="#visual" data-i18n="nav.visual">Picture safety</a>
+          <a href="#kids" data-i18n="nav.kids">Children</a>
+          <a href="#seniors" data-i18n="nav.seniors">Seniors</a>
+          <a href="#women" data-i18n="nav.women">Women &amp; girls</a>
+          <a href="#help" data-i18n="nav.help">Get help</a>
+        </nav>
+
+        <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch to Hindi">
+          <svg class="icon" aria-hidden="true"><use href="#i-globe"></use></svg>
+          <span id="lang-toggle-text" lang="hi">हिंदी</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" id="start">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7">
+            <p class="eyebrow">
+              <span class="eyebrow-dot" aria-hidden="true"></span>
+              <span data-i18n="hero.eyebrow">A safety lesson for real life · 2026</span>
+            </p>
+            <h1>
+              <span data-i18n="hero.title1">One internet.</span><br>
+              <span class="marker" data-i18n="hero.title2">Four ways to stay safe.</span>
+            </h1>
+            <p class="hero-lead" data-i18n="hero.lead">A picture-first safety hub for new internet users, children, elders and women facing online harassment. No jargon. No sign-up. Just the next safe step.</p>
+            <div class="hero-actions">
+              <a class="btn-cs btn-cs-primary" href="#paths">
+                <span data-i18n="hero.cta">Choose your path</span>
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+              </a>
+              <a class="btn-cs btn-cs-secondary" href="#help">
+                <span data-i18n="hero.helpCta">Get help now</span>
+              </a>
+            </div>
+            <ul class="trust-row" aria-label="Prototype features" data-i18n-aria-label="hero.trustAria">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span data-i18n="hero.trust1">No accounts</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-globe"></use></svg><span data-i18n="hero.trust2">English + हिंदी</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg><span data-i18n="hero.trust3">Phone-friendly</span></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="hero-visual" aria-hidden="true">
+              <div class="visual-glow" aria-hidden="true"></div>
+              <div class="phone-mock">
+                <div class="phone-status">
+                  <span>9:41</span>
+                  <span class="phone-signal">▮▮▮</span>
+                </div>
+                <div class="chat-head">
+                  <span class="unknown-avatar">?</span>
+                  <div class="chat-who">
+                    <strong data-i18n="hero.mockSender">Unknown number</strong>
+                    <span data-i18n="hero.mockChannel">WhatsApp message</span>
+                  </div>
+                  <span class="chat-alert">
+                    <svg class="icon"><use href="#i-alert"></use></svg>
+                  </span>
+                </div>
+                <div class="chat-body">
+                  <p class="chat-time" data-i18n="hero.mockTime">Today, 4:52 PM</p>
+                  <p class="chat-bubble" data-i18n="hero.mockMessage">Your account will be blocked. Share the OTP now.</p>
+                  <p class="chat-bubble chat-bubble-short" data-i18n="hero.mockMessage2">Do not call. This is urgent.</p>
+                  <div class="chat-tip">
+                    <svg class="icon"><use href="#i-alert"></use></svg>
+                    <span data-i18n="hero.mockFlag">Urgent + OTP = scam</span>
+                  </div>
+                </div>
+              </div>
+              <div class="hero-sticker sticker-yellow">
+                <svg class="icon"><use href="#i-eye-off"></use></svg>
+                <span data-i18n="hero.mockTip">Pause. Check. Report.</span>
+              </div>
+              <div class="hero-sticker sticker-green">
+                <span class="sticker-check"><svg class="icon"><use href="#i-shield"></use></svg></span>
+                <span data-i18n="hero.mockSafe">Protected</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="paths" id="paths">
+      <div class="container">
+        <div class="section-heading">
+          <p class="kicker" data-i18n="paths.kicker">Start here</p>
+          <h2 data-i18n="paths.title">Who is this for?</h2>
+          <p class="section-lead" data-i18n="paths.lead">Pick the path that fits you best. Every module is open, so you can visit all four.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-sm-6 col-xl-3">
+            <a class="path-card path-yellow" href="#visual">
+              <span class="path-number" aria-hidden="true">01</span>
+              <span class="path-icon"><svg class="icon" aria-hidden="true"><use href="#i-pictures"></use></svg></span>
+              <span class="path-badge" data-i18n="path1.badge">No reading needed</span>
+              <h3 data-i18n="path1.title">I learn with pictures</h3>
+              <p data-i18n="path1.desc">Recognise a fake OTP request, a suspicious link and a scam call.</p>
+              <span class="path-link">
+                <span data-i18n="path1.cta">Start the picture lesson</span>
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+              </span>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-xl-3">
+            <a class="path-card path-blue" href="#kids">
+              <span class="path-number" aria-hidden="true">02</span>
+              <span class="path-icon"><svg class="icon" aria-hidden="true"><use href="#i-spark"></use></svg></span>
+              <span class="path-badge" data-i18n="path2.badge">Ages 9+</span>
+              <h3 data-i18n="path2.title">I'm a child or teen</h3>
+              <p data-i18n="path2.desc">See how a simple photo can reveal your school, home or private chats.</p>
+              <span class="path-link">
+                <span data-i18n="path2.cta">Play the photo game</span>
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+              </span>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-xl-3">
+            <a class="path-card path-green" href="#seniors">
+              <span class="path-number" aria-hidden="true">03</span>
+              <span class="path-icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg></span>
+              <span class="path-badge" data-i18n="path3.badge">Large text</span>
+              <h3 data-i18n="path3.title">I'm a senior</h3>
+              <p data-i18n="path3.desc">Slow down on urgent WhatsApp messages and keep your OTP private.</p>
+              <span class="path-link">
+                <span data-i18n="path3.cta">Open the big-text guide</span>
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+              </span>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-xl-3">
+            <a class="path-card path-plum" href="#women">
+              <span class="path-number" aria-hidden="true">04</span>
+              <span class="path-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield-heart"></use></svg></span>
+              <span class="path-badge" data-i18n="path4.badge">Digital harassment</span>
+              <h3 data-i18n="path4.title">I'm a woman or girl</h3>
+              <p data-i18n="path4.desc">Save evidence, lock down your accounts and report online abuse.</p>
+              <span class="path-link">
+                <span data-i18n="path4.cta">Open the safety toolkit</span>
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="module visual-module" id="visual">
+      <div class="container">
+        <div class="row g-4 g-lg-5 align-items-start">
+          <div class="col-lg-4">
+            <div class="module-copy">
+              <p class="kicker kicker-light" data-i18n="visual.kicker">01 · Picture safety</p>
+              <h2 id="visual-title" data-i18n="visual.title">Spot the danger. No reading needed.</h2>
+              <p class="module-lead" data-i18n="visual.lead">Look at the picture. Is it safe or a scam? Tap the big answer that matches.</p>
+
+              <div class="legend" role="group" aria-label="Answer key" data-i18n-aria-label="visual.legendAria">
+                <span class="legend-item">
+                  <span class="legend-symbol symbol-safe"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span>
+                  <span data-i18n="visual.legendSafe">Safe</span>
+                </span>
+                <span class="legend-item">
+                  <span class="legend-symbol symbol-danger"><svg class="icon" aria-hidden="true"><use href="#i-x"></use></svg></span>
+                  <span data-i18n="visual.legendScam">Scam</span>
+                </span>
+              </div>
+
+              <div class="helper-callout">
+                <svg class="icon" aria-hidden="true"><use href="#i-volume"></use></svg>
+                <p data-i18n="visual.helper">Tap the speaker to hear the picture read aloud.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="game-shell visual-game" id="visual-game" role="group" aria-labelledby="visual-title"></div>
+            <p class="game-footnote" data-i18n="visual.footnote">A teacher, volunteer or family member can read the short tips aloud.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="module kids-module" id="kids">
+      <div class="container">
+        <div class="module-heading">
+          <p class="kicker" data-i18n="kids.kicker">02 · Children &amp; teens</p>
+          <h2 id="kids-title" data-i18n="kids.title">Would you share this photo?</h2>
+          <p class="module-lead" data-i18n="kids.lead">Every post leaves a digital footprint. Play the photo game and decide what belongs on the internet.</p>
+        </div>
+
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-7">
+            <div class="game-shell kids-game" id="kids-game" role="group" aria-labelledby="kids-title"></div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="photo-rules">
+              <span class="rules-icon"><svg class="icon" aria-hidden="true"><use href="#i-camera"></use></svg></span>
+              <p class="mini-label" data-i18n="kids.rulesKicker">Before you post</p>
+              <h3 data-i18n="kids.rulesTitle">The 3-question photo check</h3>
+              <ol class="rule-list">
+                <li>
+                  <span class="rule-num" aria-hidden="true">1</span>
+                  <span data-i18n="kids.rule1">Is my face, school or uniform showing?</span>
+                </li>
+                <li>
+                  <span class="rule-num" aria-hidden="true">2</span>
+                  <span data-i18n="kids.rule2">Is my home, street or location showing?</span>
+                </li>
+                <li>
+                  <span class="rule-num" aria-hidden="true">3</span>
+                  <span data-i18n="kids.rule3">Did I ask everyone in the photo?</span>
+                </li>
+              </ol>
+              <p class="rules-note" data-i18n="kids.note">The internet remembers. A screenshot can travel further than the post.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="module seniors-module" id="seniors">
+      <div class="container">
+        <div class="seniors-head">
+          <div>
+            <p class="kicker" data-i18n="seniors.kicker">03 · Seniors</p>
+            <h2 id="seniors-title" data-i18n="seniors.title">Urgent can wait. Check first.</h2>
+            <p class="module-lead" data-i18n="seniors.lead">Big-text rules for WhatsApp, phone calls, OTPs and sudden money requests.</p>
+          </div>
+          <div class="text-size-tools" role="group" aria-labelledby="text-size-label">
+            <span id="text-size-label" class="text-size-label" data-i18n="seniors.textSize">Text size</span>
+            <button class="size-button" id="elder-smaller" type="button" aria-label="Make the text smaller" data-i18n-aria-label="seniors.smallerAria">A−</button>
+            <button class="size-button" id="elder-bigger" type="button" aria-label="Make the text larger" data-i18n-aria-label="seniors.biggerAria">A+</button>
+          </div>
+        </div>
+
+        <div class="elder-content">
+          <div class="row g-4 g-lg-5 align-items-stretch">
+            <div class="col-lg-5">
+              <div class="elder-phone" role="group" aria-labelledby="elder-message-label">
+                <div class="elder-phone-top">
+                  <span class="unknown-avatar unknown-avatar-dark">?</span>
+                  <div class="chat-who">
+                    <strong data-i18n="seniors.unknown">Unknown number</strong>
+                    <span data-i18n="seniors.notSaved">Not saved in your contacts</span>
+                  </div>
+                  <span class="chat-alert"><svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg></span>
+                </div>
+                <div class="elder-chat">
+                  <p class="mini-label" id="elder-message-label" data-i18n="seniors.mockLabel">A message you might get</p>
+                  <p class="elder-bubble" data-i18n="seniors.mockMsg">Papa, my phone broke. Send ₹25,000 to this account now. Don't call — I am in a meeting.</p>
+                  <div class="urgent-tags">
+                    <span data-i18n="seniors.tagUrgent">URGENT</span>
+                    <span data-i18n="seniors.tagNew">NEW NUMBER</span>
+                  </div>
+                </div>
+                <p class="elder-phone-note" data-i18n="seniors.lookFor">Two red flags are already visible: urgency and a new number.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-7">
+              <div class="elder-rules">
+                <article class="elder-rule">
+                  <span class="elder-icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg></span>
+                  <div>
+                    <span class="rule-count">01</span>
+                    <h3 data-i18n="seniors.rule1Title">Call the saved number</h3>
+                    <p data-i18n="seniors.rule1Body">Use the number already saved in your phone. Do not use the number sent in the message.</p>
+                  </div>
+                </article>
+
+                <article class="elder-rule">
+                  <span class="elder-icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg></span>
+                  <div>
+                    <span class="rule-count">02</span>
+                    <h3 data-i18n="seniors.rule2Title">Slow down when it is urgent</h3>
+                    <p data-i18n="seniors.rule2Body">Scammers use fear and deadlines so you act fast. Take five minutes and tell someone you trust.</p>
+                  </div>
+                </article>
+
+                <article class="elder-rule">
+                  <span class="elder-icon"><svg class="icon" aria-hidden="true"><use href="#i-key"></use></svg></span>
+                  <div>
+                    <span class="rule-count">03</span>
+                    <h3 data-i18n="seniors.rule3Title">Never share an OTP or PIN</h3>
+                    <p data-i18n="seniors.rule3Body">No bank, police officer or family member needs your OTP. Whoever has it can take your money.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <div class="golden-rule">
+            <span class="golden-icon"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg></span>
+            <p data-i18n="seniors.golden">Your OTP is a key. Never hand it to anyone.</p>
+          </div>
+
+          <div class="elder-practice" id="elder-practice">
+            <div class="practice-heading">
+              <p class="mini-label" data-i18n="seniors.practiceKicker">Quick check</p>
+              <h3 data-i18n="seniors.practiceTitle">What would you do?</h3>
+            </div>
+            <p class="practice-scenario" data-i18n="seniors.practiceScenario">The message says: “Your bank account will be blocked today. Share the OTP on your phone immediately.”</p>
+            <div class="practice-options">
+              <button class="practice-choice" id="elder-choice-wrong" type="button" data-answer="wrong">
+                <svg class="icon" aria-hidden="true"><use href="#i-message"></use></svg>
+                <span data-i18n="seniors.practiceWrong">Share the OTP before the account is blocked.</span>
+              </button>
+              <button class="practice-choice" id="elder-choice-right" type="button" data-answer="right">
+                <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+                <span data-i18n="seniors.practiceRight">Call the bank using the official number on your card.</span>
+              </button>
+            </div>
+            <div class="practice-feedback" id="elder-feedback" hidden aria-live="polite">
+              <span class="practice-feedback-icon" id="elder-feedback-icon" aria-hidden="true"></span>
+              <div>
+                <h4 id="elder-feedback-title"></h4>
+                <p id="elder-feedback-text"></p>
+                <p class="practice-help" data-i18n="seniors.practiceHelp">If you already shared an OTP, call your bank immediately and report it on 1930.</p>
+              </div>
+              <button class="text-button" id="elder-retry" type="button">
+                <svg class="icon" aria-hidden="true"><use href="#i-rotate"></use></svg>
+                <span data-i18n="seniors.retry">Try again</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="module women-module" id="women">
+      <div class="container">
+        <div class="women-heading">
+          <p class="kicker kicker-plum" data-i18n="women.kicker">04 · Women &amp; girls</p>
+          <h2 id="women-title" data-i18n="women.title">Save proof. Lock down. Report.</h2>
+          <p class="module-lead" data-i18n="women.lead">A cybersecurity toolkit for online harassment, stalking and image abuse. Your evidence matters, and your privacy settings are your first line of defence.</p>
+          <p class="panic-inline">
+            <svg class="icon" aria-hidden="true"><use href="#i-exit"></use></svg>
+            <span data-i18n="women.panicNote">On a shared device? Use the red Panic exit to leave this page quickly.</span>
+          </p>
+        </div>
+
+        <div class="helpline-grid" role="group" aria-label="Emergency helplines" data-i18n-aria-label="women.helplineAria">
+          <a class="helpline-card helpline-red" href="tel:112">
+            <span class="helpline-number">112</span>
+            <span class="helpline-copy">
+              <strong data-i18n="women.helpEmergency">Emergency</strong>
+              <small data-i18n="women.helpEmergencyDesc">Police · immediate danger</small>
+            </span>
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          </a>
+          <a class="helpline-card helpline-plum" href="tel:181">
+            <span class="helpline-number">181</span>
+            <span class="helpline-copy">
+              <strong data-i18n="women.helpWomen">Women's helpline</strong>
+              <small data-i18n="women.helpWomenDesc">Support and counselling</small>
+            </span>
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          </a>
+          <a class="helpline-card helpline-blue" href="tel:1930">
+            <span class="helpline-number">1930</span>
+            <span class="helpline-copy">
+              <strong data-i18n="women.helpCyber">Cyber fraud</strong>
+              <small data-i18n="women.helpCyberDesc">National cybercrime helpline</small>
+            </span>
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          </a>
+        </div>
+
+        <div class="evidence-card">
+          <div class="evidence-heading">
+            <span class="evidence-icon"><svg class="icon" aria-hidden="true"><use href="#i-camera"></use></svg></span>
+            <div>
+              <p class="mini-label" data-i18n="women.evidenceKicker">Step one</p>
+              <h3 data-i18n="women.evidenceTitle">Save the evidence before you block.</h3>
+              <p data-i18n="women.evidenceLead">Do not delete the messages yet. Preserve a clear, unedited record first.</p>
+            </div>
+          </div>
+
+          <ol class="evidence-list">
+            <li>
+              <span class="evidence-num" aria-hidden="true">1</span>
+              <div>
+                <h4 data-i18n="women.step1Title">Capture the full screen</h4>
+                <p data-i18n="women.step1Body">Show the username, message, date, time and app or URL. Do not crop the screenshot.</p>
+              </div>
+            </li>
+            <li>
+              <span class="evidence-num" aria-hidden="true">2</span>
+              <div>
+                <h4 data-i18n="women.step2Title">Keep the original safe</h4>
+                <p data-i18n="women.step2Body">Save the unedited screenshot or chat export somewhere private. Never edit the original.</p>
+              </div>
+            </li>
+            <li>
+              <span class="evidence-num" aria-hidden="true">3</span>
+              <div>
+                <h4 data-i18n="women.step3Title">Write a short log</h4>
+                <p data-i18n="women.step3Body">Record what happened, when, the account name and the link. Keep it factual.</p>
+              </div>
+            </li>
+            <li>
+              <span class="evidence-num" aria-hidden="true">4</span>
+              <div>
+                <h4 data-i18n="women.step4Title">Record every handover</h4>
+                <p data-i18n="women.step4Body">Note each time you share a copy with a platform, the police or a lawyer. That is your chain of custody.</p>
+              </div>
+            </li>
+          </ol>
+
+          <div class="custody-note">
+            <svg class="icon" aria-hidden="true"><use href="#i-clipboard"></use></svg>
+            <div>
+              <strong data-i18n="women.custodyTitle">Chain of custody, in plain words</strong>
+              <p data-i18n="women.custodyBody">It is a simple record of where the evidence came from and who handled it. Keep the first copy unchanged.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="privacy-heading">
+          <p class="mini-label" data-i18n="women.privacyKicker">Step two</p>
+          <h3 data-i18n="women.privacyTitle">Lock down your accounts.</h3>
+          <p data-i18n="women.privacyLead">Small privacy changes make it harder for an abuser to find you, tag you or track your location.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="platform-card">
+              <h4 data-i18n="women.platformTitle">Account lockdown</h4>
+
+              <div class="platform-guide">
+                <div class="platform-name">
+                  <span class="platform-logo platform-ig" aria-hidden="true">IG</span>
+                  <strong>Instagram</strong>
+                </div>
+                <p data-i18n="women.igSteps">Make the account private, then limit tags and mentions to people you follow.</p>
+                <a class="guide-link" href="https://help.instagram.com/448523408565555" target="_blank" rel="noopener noreferrer">
+                  <span data-i18n="women.igGuide">Official Instagram guide</span>
+                  <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg>
+                </a>
+              </div>
+
+              <div class="platform-guide">
+                <div class="platform-name">
+                  <span class="platform-logo platform-fb" aria-hidden="true">FB</span>
+                  <strong>Facebook</strong>
+                </div>
+                <p data-i18n="women.fbSteps">Set posts to Friends. Use Lock profile where available, plus tag and timeline review.</p>
+                <a class="guide-link" href="https://www.facebook.com/help/196419427651178" target="_blank" rel="noopener noreferrer">
+                  <span data-i18n="women.fbGuide">Official Facebook guide</span>
+                  <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg>
+                </a>
+              </div>
+
+              <div class="platform-guide">
+                <div class="platform-name">
+                  <span class="platform-logo platform-loc" aria-hidden="true">
+                    <svg class="icon"><use href="#i-pin"></use></svg>
+                  </span>
+                  <strong data-i18n="women.locationTitle">Location tagging</strong>
+                </div>
+                <p data-i18n="women.locationSteps">Turn off location for social apps in phone settings. Remove location tags from new and old posts.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="checklist-card">
+              <div class="checklist-head">
+                <div>
+                  <h4 data-i18n="women.checklistTitle">Privacy checklist</h4>
+                  <p data-i18n="women.checklistLead">Tick each step you finish. Your progress is saved only in this browser.</p>
+                </div>
+                <span class="checklist-count" id="checklist-count" aria-live="polite">0 / 7</span>
+              </div>
+
+              <div class="privacy-progress" id="privacy-progress" role="progressbar" aria-label="Privacy checklist progress" data-i18n-aria-label="women.progressAria" aria-valuemin="0" aria-valuemax="7" aria-valuenow="0">
+                <div class="privacy-progress-bar" id="privacy-progress-bar"></div>
+              </div>
+
+              <div class="privacy-list" id="privacy-list">
+                <label class="privacy-item" for="privacy-1">
+                  <input class="privacy-check" id="privacy-1" type="checkbox" data-check="instagram-private">
+                  <span class="privacy-box" aria-hidden="true"><svg class="icon"><use href="#i-check"></use></svg></span>
+                  <span class="privacy-copy">
+                    <strong data-i18n="women.check1Title">Instagram is private</strong>
+                    <span data-i18n="women.check1Body">Review follow requests and limit who can tag or mention you.</span>
+                  </span>
+                </label>
+                <label class="privacy-item" for="privacy-2">
+                  <input class="privacy-check" id="privacy-2" type="checkbox" data-check="facebook-locked">
+                  <span class="privacy-box" aria-hidden="true"><svg class="icon"><use href="#i-check"></use></svg></span>
+                  <span class="privacy-copy">
+                    <strong data-i18n="women.check2Title">Facebook is locked down</strong>
+                    <span data-i18n="women.check2Body">Use Friends-only posting and turn on tag review.</span>
+                  </span>
+                </label>
+                <label class="privacy-item" for="privacy-3">
+                  <input class="privacy-check" id="privacy-3" type="checkbox" data-check="location-off">
+                  <span class="privacy-box" aria-hidden="true"><svg class="icon"><use href="#i-check"></use></svg></span>
+                  <span class="privacy-copy">
+                    <strong data-i18n="women.check3Title">Location sharing is off</strong>
+                    <span data-i18n="women.check3Body">Disable precise location for social apps and remove old location tags.</span>
+                  </span>
+                </label>
+                <label class="privacy-item" for="privacy-4">
+                  <input class="privacy-check" id="privacy-4" type="checkbox" data-check="old-posts">
+                  <span class="privacy-box" aria-hidden="true"><svg class="icon"><use href="#i-check"></use></svg></span>
+                  <span class="privacy-copy">
+                    <strong data-i18n="women.check4Title">Old posts are reviewed</strong>
+                    <span data-i18n="women.check4Body">Remove school, home or workplace details you no longer want public.</span>
+                  </span>
+                </label>
+                <label class="privacy-item" for="privacy-5">
+                  <input class="privacy-check" id="privacy-5" type="checkbox" data-check="contact-details">
+                  <span class="privacy-box" aria-hidden="true"><svg class="icon"><use href="#i-check"></use></svg></span>
+                  <span class="privacy-copy">
+                    <strong data-i18n="women.check5Title">Personal details are removed</strong>
+                    <span data-i18n="women.check5Body">Take your phone number, email and address out of your bio.</span>
+                  </span>
+                </label>
+                <label class="privacy-item" for="privacy-6">
+                  <input class="privacy-check" id="privacy-6" type="checkbox" data-check="two-factor">
+                  <span class="privacy-box" aria-hidden="true"><svg class="icon"><use href="#i-check"></use></svg></span>
+                  <span class="privacy-copy">
+                    <strong data-i18n="women.check6Title">Two-factor authentication is on</strong>
+                    <span data-i18n="women.check6Body">Protect your email and social accounts with 2FA and unique passwords.</span>
+                  </span>
+                </label>
+                <label class="privacy-item" for="privacy-7">
+                  <input class="privacy-check" id="privacy-7" type="checkbox" data-check="report-saved">
+                  <span class="privacy-box" aria-hidden="true"><svg class="icon"><use href="#i-check"></use></svg></span>
+                  <span class="privacy-copy">
+                    <strong data-i18n="women.check7Title">The harassment report is saved</strong>
+                    <span data-i18n="women.check7Body">Keep the screenshot and the platform's report confirmation before you block.</span>
+                  </span>
+                </label>
+              </div>
+
+              <div class="checklist-footer">
+                <p data-i18n="women.checklistLocal">Nothing here is uploaded. Clearing browser data will remove your ticks.</p>
+                <button class="text-button" id="reset-privacy" type="button">
+                  <svg class="icon" aria-hidden="true"><use href="#i-rotate"></use></svg>
+                  <span data-i18n="women.resetChecklist">Reset checklist</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reporting">
+          <div class="reporting-heading">
+            <p class="mini-label" data-i18n="women.reportKicker">Step three</p>
+            <h3 data-i18n="women.reportTitle">Where to report.</h3>
+            <p data-i18n="women.reportLead">Save proof, report the account, then report to the authorities. If you are in immediate danger, call 112 first.</p>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <article class="report-card report-ncw">
+                <span class="report-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield-heart"></use></svg></span>
+                <p class="mini-label" data-i18n="women.ncwKicker">NCW · Cybercrimes against women</p>
+                <h4 data-i18n="women.ncwTitle">National Commission for Women</h4>
+                <p data-i18n="women.ncwBody">Use the NCW online complaint system. Choose the cybercrime category when you register.</p>
+                <a class="report-link" href="https://ncwapps.nic.in/onlinecomplaintsv2/" target="_blank" rel="noopener noreferrer">
+                  <span data-i18n="women.ncwLink">Open the NCW complaint portal</span>
+                  <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg>
+                </a>
+                <p class="report-phone">NCW helpline: <a href="tel:14490">14490</a></p>
+              </article>
+            </div>
+
+            <div class="col-lg-4">
+              <article class="report-card report-cyber">
+                <span class="report-icon"><svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg></span>
+                <p class="mini-label" data-i18n="women.cyberKicker">Government of India</p>
+                <h4 data-i18n="women.cyberTitle">National Cyber Crime Portal</h4>
+                <p data-i18n="women.cyberBody">Report online stalking, threats, morphed images and fraud. Call 1930 if money was taken.</p>
+                <a class="report-link" href="https://cybercrime.gov.in/" target="_blank" rel="noopener noreferrer">
+                  <span data-i18n="women.cyberLink">Report at cybercrime.gov.in</span>
+                  <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg>
+                </a>
+                <p class="report-phone"><a href="tel:1930">1930</a> · <a href="tel:112">112</a></p>
+              </article>
+            </div>
+
+            <div class="col-lg-4">
+              <article class="report-card report-platforms">
+                <span class="report-icon"><svg class="icon" aria-hidden="true"><use href="#i-message"></use></svg></span>
+                <p class="mini-label" data-i18n="women.platformKicker">Inside the app</p>
+                <h4 data-i18n="women.platformReportTitle">Report on the platform</h4>
+                <p data-i18n="women.platformReportBody">Use in-app reporting first. Save the confirmation code before you block the account.</p>
+                <div class="platform-links">
+                  <a href="https://help.instagram.com/192435014247952" target="_blank" rel="noopener noreferrer">Instagram <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a>
+                  <a href="https://www.facebook.com/help/263149623790594" target="_blank" rel="noopener noreferrer">Facebook <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a>
+                  <a href="https://faq.whatsapp.com/1142481766359885" target="_blank" rel="noopener noreferrer">WhatsApp <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <p class="report-note" data-i18n="women.reportNote">You can report to the platform, NCW and the cybercrime portal. You do not have to choose only one.</p>
+          <p class="disclaimer" data-i18n="women.disclaimer">This is an awareness prototype, not legal advice. NCW and cybercrime portal links go to official Government of India websites.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="help-band" id="help">
+      <div class="container">
+        <div class="help-card">
+          <div class="help-copy">
+            <span class="help-icon"><svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg></span>
+            <div>
+              <p class="kicker kicker-light" data-i18n="help.kicker">Need help now?</p>
+              <h2 data-i18n="help.title">Emergency numbers</h2>
+              <p data-i18n="help.body">In immediate danger, call 112. For cyber fraud, call 1930. For the women's helpline, call 181. Use the red Panic exit to leave this page quickly.</p>
+            </div>
+          </div>
+          <div class="help-actions">
+            <a class="help-number" href="tel:112"><span>112</span><small data-i18n="help.emergency">Emergency</small></a>
+            <a class="help-number" href="tel:1930"><span>1930</span><small data-i18n="help.cyber">Cyber fraud</small></a>
+            <a class="help-number" href="tel:181"><span>181</span><small data-i18n="help.women">Women's helpline</small></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <a class="brand footer-brand" href="#start">
+            <span class="brand-mark" aria-hidden="true"><svg class="icon"><use href="#i-shield"></use></svg></span>
+            <span class="brand-copy">
+              <span class="brand-name">CyberShield</span>
+              <span class="brand-tagline" data-i18n="brand.tagline">Digital Safety Awareness Hub</span>
+            </span>
+          </a>
+          <p class="footer-about" data-i18n="footer.about">A student capstone for the Social Engineering &amp; Awareness course. Built to make the next safe step easier to see.</p>
+          <p class="footer-tech">HTML5 · CSS3 · Vanilla JavaScript · Bootstrap 5</p>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <h2 class="footer-heading" data-i18n="footer.linksTitle">Official reporting</h2>
+          <ul class="footer-links">
+            <li><a href="https://cybercrime.gov.in/" target="_blank" rel="noopener noreferrer" data-i18n="footer.cyber">Cybercrime portal</a></li>
+            <li><a href="https://ncwapps.nic.in/onlinecomplaintsv2/" target="_blank" rel="noopener noreferrer" data-i18n="footer.ncw">NCW complaints</a></li>
+            <li><a href="tel:1930" data-i18n="footer.helpline">Cyber helpline 1930</a></li>
+            <li><a href="#help" data-i18n="footer.emergency">Emergency help</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <h2 class="footer-heading" data-i18n="footer.privacyTitle">Privacy &amp; panic exit</h2>
+          <p class="footer-small" data-i18n="footer.privacyText">This site does not collect personal data. Your language choice and checklist progress stay in this browser.</p>
+          <p class="footer-small" data-i18n="footer.panicNote">The Panic exit clears this site's saved activity and replaces the current page. Browsers do not let a website erase the entire browsing history.</p>
+          <a class="footer-top-link" href="#start">
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg>
+            <span data-i18n="footer.top">Back to top</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p data-i18n="footer.credit">CyberShield · Digital Safety Awareness Hub · Student prototype 2026</p>
+        <p data-i18n="footer.madeFor">Made for learning, not for collecting data.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="panic-button" id="panic-button" type="button" aria-label="Panic exit: clear this site's saved data and leave for weather.com" title="Panic exit (Alt+X)" data-i18n-aria-label="panic.aria" data-i18n-title="panic.title">
+    <span class="panic-icon"><svg class="icon" aria-hidden="true"><use href="#i-exit"></use></svg></span>
+    <span class="panic-copy">
+      <span class="panic-label" data-i18n="panic.label">Panic exit</span>
+      <small data-i18n="panic.hint">Leave this page now</small>
+    </span>
+  </button>
+
+  <p class="visually-hidden" id="site-status" role="status" aria-live="polite"></p>
+</body>
+</html>
